@@ -1,0 +1,23 @@
+{
+  "name": "microfrontends",
+  "version": "1.0.0",
+  "description": "Simple app to demo the microfrontend architecture",
+  "private": true,
+  "workspaces": [
+    "host",
+    "header",
+    "content"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:host\" \"npm run dev:header\" \"npm run dev:content\"",
+    "dev:host": "npm run start --workspace=host",
+    "dev:header": "npm run start --workspace=header",
+    "dev:content": "npm run start --workspace=content",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "author": "shivaprasad.ks@clear.in",
+  "license": "ISC"
+}
